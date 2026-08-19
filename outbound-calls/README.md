@@ -7,6 +7,8 @@ The TypeScript and Python scripts validate contacts and print a dry-run plan by
 default. They only call OmniDimension when you pass `--live` and configure the
 required environment variables.
 
+Part of [OmniDimension examples](https://github.com/Omnidim/examples).
+
 ## Choose an implementation
 
 - [`typescript`](./typescript): Node.js CLI for local tools and servers
@@ -26,4 +28,7 @@ and the [bulk calling tutorial](https://www.youtube.com/watch?v=szkkFgJew7I).
 - Use only contacts you are authorized to call.
 - Keep real contact lists outside this repository.
 
-Need help adapting the workflow? [Join the builders on Discord](https://discord.gg/kdjzykMTHJ).
+## Help and community
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.
+- [Ask a longer question or share your workflow ↗](https://community.omnidim.io) so others can find it later.
