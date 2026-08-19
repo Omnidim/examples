@@ -1,0 +1,25 @@
+{
+  "call_id": 24877,
+  "bot_id": 551,
+  "bot_name": "Appointment assistant",
+  "phone_number": "+1234567890",
+  "call_date": "2025-05-22 05:02:54",
+  "user_email": "user@example.com",
+  "call_report": {
+    "summary": "Caller requested a dental appointment.",
+    "sentiment": "Positive",
+    "extracted_variables": {
+      "name": "Ravi",
+      "appointment_type": "Dental Checkup"
+    },
+    "full_conversation": "Caller: I want a dental appointment.\nAgent: I can help with that.",
+    "interactions": [
+      {
+        "sequence": 1,
+        "user_query": "I want a dental appointment",
+        "bot_response": "I can help with that.",
+        "time": "2025-05-22 05:02:45"
+      }
+    ]
+  }
+}
