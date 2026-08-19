@@ -1,3 +1,7 @@
+# Copyright (c) 2026 OmniDimension
+# SPDX-License-Identifier: MIT
+# Part of https://github.com/Omnidim/examples
+
 """Fixture REST API for OmniDimension Custom API integrations."""
 
 import json
