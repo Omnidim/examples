@@ -1,5 +1,13 @@
 # OmniDimension examples
 
+<p>
+  <a href="https://github.com/Omnidim/examples"><img src="https://img.shields.io/badge/GitHub-Omnidim%2Fexamples-181717?logo=github&logoColor=white" alt="Omnidim examples on GitHub"></a>
+  <a href="https://github.com/Omnidim/examples/actions/workflows/ci.yml"><img src="https://github.com/Omnidim/examples/actions/workflows/ci.yml/badge.svg" alt="Continuous integration"></a>
+  <a href="https://docs.omnidim.io/docs"><img src="https://img.shields.io/badge/docs-OmniDimension-0d9488" alt="OmniDimension developer documentation"></a>
+  <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join the OmniDimension Discord"></a>
+  <a href="https://community.omnidim.io"><img src="https://img.shields.io/badge/forum-community.omnidim.io-334155" alt="OmniDimension community forum"></a>
+</p>
+
 Reference implementations for adding OmniDimension voice agents to web apps,
 backends, outbound workflows, and AI coding clients.
 
