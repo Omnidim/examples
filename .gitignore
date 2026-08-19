@@ -3,6 +3,7 @@
 !.env.example
 node_modules/
 .next/
+*.tsbuildinfo
 dist/
 coverage/
 __pycache__/
