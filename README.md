@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://omnidim.io"><img src="./assets/omnidim-logo-light.png" width="430" alt="OmniDimension"></a>
+  <a href="https://omnidim.io"><img src="./assets/omnidim-icon-light.png" width="92" alt="OmniDimension"></a>
 </p>
 
 <h1 align="center">OmniDimension examples</h1>
