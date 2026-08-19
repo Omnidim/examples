@@ -36,17 +36,23 @@ Every example starts in a safe local mode with fixtures or sample data. Add an
 `OMNIDIM_API_KEY` only when you are ready to connect it to your OmniDimension
 account. No example makes a live call by default.
 
-```
-Your application or workflow
-        |
-        v
-OmniDimension agent
-        |
-        +-- Web voice session
-        +-- Your REST API
-        +-- Outbound campaign
-        +-- Post-call webhook
-        +-- MCP client
+```mermaid
+flowchart LR
+  subgraph Systems[Your product, data, and tools]
+    Website[Website or product]
+    API[Backend or REST API]
+    Leads[Lead list or CRM]
+    Outcome[CRM, workflow, or data store]
+    Client[AI coding client]
+  end
+
+  Agent[OmniDimension agent]
+
+  Website <--> |web-voice| Agent
+  Agent <--> |custom-api| API
+  Leads --> |outbound-calls| Agent
+  Agent --> |webhooks| Outcome
+  Client <--> |mcp| Agent
 ```
 
 ## Documentation and community
