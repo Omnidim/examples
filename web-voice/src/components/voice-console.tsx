@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getStatusLabel, isInCall } from "@/lib/call-state";
+import type { AgentContext } from "@/lib/agent-context";
+import { requestMicrophonePermission } from "@/lib/microphone";
+import { applyTranscriptSnapshot } from "@/lib/transcript";
 
 type CallState = "ready" | "connecting" | "active" | "ended" | "error";
 type Role = "agent" | "user";
@@ -14,9 +17,10 @@ type SessionHandle = {
   stop: () => void;
 };
 
-const initialTranscript: TranscriptLine[] = [
-  { id: "welcome", role: "agent", text: "Hi, I’m the OmniDimension assistant. How can I help today?", final: true },
-];
+function initialTranscript(agent: AgentContext | null): TranscriptLine[] {
+  const greeting = agent?.welcomeMessage ?? "Hi, I’m the OmniDimension assistant. How can I help today?";
+  return [{ id: "welcome", role: "agent", text: greeting, final: true }];
+}
 
 function parseTranscript(value: unknown): { role: Role; text: string; final: boolean } | null {
   if (!value || typeof value !== "object") return null;
@@ -30,14 +34,16 @@ function readableError(error: unknown) {
   return "We could not start the call. Check your microphone permissions and try again.";
 }
 
-export function VoiceConsole() {
+export function VoiceConsole({ agent }: { agent: AgentContext | null }) {
   const [callState, setCallState] = useState<CallState>("ready");
   const [muted, setMuted] = useState(false);
-  const [mode, setMode] = useState<"mock" | "live">("mock");
-  const [transcript, setTranscript] = useState<TranscriptLine[]>(initialTranscript);
+  const [mode, setMode] = useState<"mock" | "live">(agent ? "live" : "mock");
+  const [transcript, setTranscript] = useState<TranscriptLine[]>(() => initialTranscript(agent));
   const [error, setError] = useState<string | null>(null);
   const sessionRef = useRef<SessionHandle | null>(null);
   const mockTimers = useRef<number[]>([]);
+  const transcriptSequence = useRef(0);
+  const transcriptViewportRef = useRef<HTMLDivElement | null>(null);
 
   const clearMockTimers = () => {
     mockTimers.current.forEach((timer) => window.clearTimeout(timer));
@@ -48,6 +54,14 @@ export function VoiceConsole() {
     clearMockTimers();
     sessionRef.current?.stop();
   }, []);
+
+  useEffect(() => {
+    const viewport = transcriptViewportRef.current;
+    if (!viewport) return;
+
+    const distanceFromBottom = viewport.scrollHeight - viewport.scrollTop - viewport.clientHeight;
+    if (distanceFromBottom <= 48) viewport.scrollTop = viewport.scrollHeight;
+  }, [transcript, error]);
 
   const appendMockConversation = () => {
     const timers = [
@@ -64,7 +78,7 @@ export function VoiceConsole() {
   const startMockCall = () => {
     setMode("mock");
     setCallState("connecting");
-    setTranscript(initialTranscript);
+    setTranscript(initialTranscript(agent));
     const timer = window.setTimeout(() => {
       setCallState("active");
       appendMockConversation();
@@ -86,15 +100,11 @@ export function VoiceConsole() {
     session.on("transcript", (event) => {
       const line = parseTranscript(event);
       if (!line) return;
-      setTranscript((current) => {
-        const existing = current.findIndex((item) => item.role === line.role && item.final === false);
-        const id = existing === -1 ? `${line.role}-${Date.now()}` : current[existing].id;
-        const next = { id, ...line };
-        if (existing === -1) return [...current, next];
-        const updated = [...current];
-        updated[existing] = next;
-        return updated;
-      });
+      setTranscript((current) => applyTranscriptSnapshot(
+        current,
+        line,
+        (role: Role) => `${role}-${++transcriptSequence.current}`,
+      ));
     });
     session.on("error", (event) => setError(readableError(event)));
     await session.start({ wsUrl });
@@ -107,9 +117,14 @@ export function VoiceConsole() {
     setMuted(false);
     setError(null);
     setCallState("connecting");
-    setTranscript(initialTranscript);
+    setTranscript(initialTranscript(agent));
 
     try {
+      // Ask before creating a live session, while the browser still has the
+      // user gesture that opened the call. A denied microphone never creates
+      // a billable session.
+      if (agent) await requestMicrophonePermission(navigator.mediaDevices);
+
       const response = await fetch("/api/session", { method: "POST" });
       const data = (await response.json()) as { mode?: "mock" | "live"; wsUrl?: string; message?: string };
       if (!response.ok) throw new Error(data.message ?? "Unable to start a voice session.");
@@ -141,6 +156,13 @@ export function VoiceConsole() {
 
   const statusLabel = getStatusLabel(callState, muted);
   const activeCall = isInCall(callState);
+  const callDescription = callState === "connecting" && agent
+    ? "Allow microphone access to join this call."
+    : callState === "active" && agent
+      ? `You are connected to ${agent.name}.`
+      : agent
+        ? `${agent.name} is ready. Your microphone stays off until you start the call.`
+        : "Local simulation. No microphone or API key needed.";
 
   return (
     <section className="voice-console" aria-label="Voice call example">
@@ -154,7 +176,7 @@ export function VoiceConsole() {
         </div>
         <div className="call-meta">
           <div className="status-line"><span className={`status-dot status-${callState}`} />{statusLabel}</div>
-          <p>{mode === "mock" ? "Local simulation. No microphone or API key needed." : "Connected to your OmniDimension agent."}</p>
+          <p>{callDescription}</p>
         </div>
         <div className="call-actions">
           {!activeCall ? (
@@ -173,8 +195,9 @@ export function VoiceConsole() {
       </div>
 
       <div className="transcript-panel" aria-live="polite">
-        <div className="panel-header"><span>Conversation</span><span>{mode === "mock" ? "Demo" : "Live session"}</span></div>
-        <div className="transcript">
+        <div className="panel-header"><span>{agent ? agent.name : "Conversation"}</span><span>{mode === "mock" ? "Demo" : "Live session"}</span></div>
+        <div className="transcript" ref={transcriptViewportRef}>
+          {agent ? <p className="agent-context">{[agent.voiceName, ...agent.languages].filter(Boolean).join(" · ")}</p> : null}
           {transcript.map((line) => (
             <article className={`transcript-line ${line.role}`} key={line.id}>
               <span>{line.role === "agent" ? "Agent" : "You"}</span>

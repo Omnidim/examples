@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { getStatusLabel, isInCall } from "../src/lib/call-state.js";
+import { requestMicrophonePermission } from "../src/lib/microphone.js";
+import { applyTranscriptSnapshot } from "../src/lib/transcript.js";
 
 test("only connecting and active calls expose in-call controls", () => {
   assert.equal(isInCall("ready"), false);
@@ -15,4 +17,47 @@ test("the visible status describes mute and terminal call states", () => {
   assert.equal(getStatusLabel("active", true), "Microphone muted");
   assert.equal(getStatusLabel("ended", false), "Call ended");
   assert.equal(getStatusLabel("error", false), "Connection issue");
+});
+
+test("cumulative agent snapshots replace the visible line", () => {
+  const initial = [{ id: "agent-1", role: "agent", text: "Thank you", final: false }];
+  const updated = applyTranscriptSnapshot(
+    initial,
+    { role: "agent", text: "Thank you for calling", final: false },
+    () => "agent-2",
+  );
+
+  assert.deepEqual(updated, [{ id: "agent-1", role: "agent", text: "Thank you for calling", final: false }]);
+});
+
+test("cumulative user snapshots replace the visible line", () => {
+  const initial = [{ id: "user-1", role: "user", text: "I would", final: false }];
+  const updated = applyTranscriptSnapshot(
+    initial,
+    { role: "user", text: "I would like to discuss", final: false },
+    () => "user-2",
+  );
+
+  assert.deepEqual(updated, [{ id: "user-1", role: "user", text: "I would like to discuss", final: false }]);
+});
+
+test("a new speaker starts a new transcript line", () => {
+  const initial = [{ id: "agent-1", role: "agent", text: "How can I help?", final: true }];
+  const updated = applyTranscriptSnapshot(
+    initial,
+    { role: "user", text: "I need a payment plan.", final: true },
+    () => "user-2",
+  );
+
+  assert.equal(updated.length, 2);
+  assert.equal(updated[1].id, "user-2");
+});
+
+test("microphone preflight releases the permission probe stream", async () => {
+  let stopped = false;
+  await requestMicrophonePermission({
+    getUserMedia: async () => ({ getTracks: () => [{ stop: () => { stopped = true; } }] }),
+  });
+
+  assert.equal(stopped, true);
 });
