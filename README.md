@@ -30,25 +30,21 @@ tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
   <tr>
     <td width="50%" valign="top">
       <a href="./web-voice"><strong>Embed voice in your product</strong></a><br>
-      Add browser calls, live transcripts, mute, and hang-up controls.<br><br>
-      <a href="./web-voice">Open web voice →</a>
+      Add browser calls, live transcripts, mute, and hang-up controls.
     </td>
     <td width="50%" valign="top">
       <a href="./custom-api"><strong>Connect the agent to your backend</strong></a><br>
-      Let an agent look up data or take an approved action through your API.<br><br>
-      <a href="./custom-api">Open custom API →</a>
+      Let an agent look up data or take an approved action through your API.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="./outbound-calls"><strong>Run outbound calls from your data</strong></a><br>
-      Validate a lead list, review a dry run, then dispatch a campaign.<br><br>
-      <a href="./outbound-calls">Open outbound calls →</a>
+      Validate a lead list, review a dry run, then dispatch a campaign.
     </td>
     <td width="50%" valign="top">
       <a href="./webhooks"><strong>Receive completed-call outcomes</strong></a><br>
-      Deliver summaries and extracted data to a workflow you control.<br><br>
-      <a href="./webhooks">Open webhooks →</a>
+      Deliver summaries and extracted data to a workflow you control.
     </td>
   </tr>
 </table>
@@ -59,11 +55,10 @@ tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
   <tr>
     <td width="50%" valign="top">
       <a href="./mcp"><strong>Manage agents from your coding client</strong></a><br>
-      Connect OmniDimension to Claude Code, Codex, Cursor, or VS Code.<br><br>
-      <a href="./mcp">Open MCP →</a>
+      Connect OmniDimension to Claude Code, Codex, Cursor, or VS Code.
     </td>
     <td width="50%" valign="top">
-      <a href="https://discord.gg/kdjzykMTHJ"><strong>Talk to the builders ↗</strong></a><br>
+      <strong>Talk to the builders</strong><br>
       Get unstuck, compare approaches, and share what you are shipping.<br><br>
       <a href="https://discord.gg/kdjzykMTHJ">Join our Discord community ↗</a>
     </td>
