@@ -8,7 +8,7 @@
     "test": "node --import tsx --test test/*.test.ts"
   },
   "devDependencies": {
-    "@types/node": "^22.15.3",
+    "@types/node": "^26.2.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
   }
