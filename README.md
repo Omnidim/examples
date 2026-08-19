@@ -47,12 +47,15 @@ OmniDimension agent
 
 - [Developer documentation](https://docs.omnidim.io/docs)
 - [Video tutorials](https://docs.omnidim.io/docs/tutorials)
-- [Join the OmniDimension builders on Discord](https://discord.gg/kdjzykMTHJ)
-- [Ask a longer question or share a build](https://community.omnidim.io)
 - [Report a bug](https://github.com/Omnidim/examples/issues)
 
-If you adapt an example, share what you built in Discord or the community.
-Questions and working variants help make these examples better for everyone.
+### Get help or share a build
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for build questions and discussion.
+- [Ask a longer question or share a build ↗](https://community.omnidim.io) so others can find it later.
+
+If you adapt an example, share what you built. Questions and working variants
+help make these examples better for everyone.
 
 ## Development
 

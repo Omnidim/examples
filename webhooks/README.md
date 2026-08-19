@@ -4,6 +4,8 @@ Receive the call data OmniDimension sends after a call, inspect it locally, and 
 
 This example is deliberately generic. OmniDimension's documented post-call webhook sends a `POST` request to the URL configured on an agent and lets you select the summary, extracted variables, full conversation, and sentiment data to include. The fixtures use the documented payload shape.
 
+Part of [OmniDimension examples](https://github.com/Omnidim/examples).
+
 ## Choose an implementation
 
 | Runtime | Start command | Send fixture | Tests |
@@ -49,4 +51,8 @@ For first-party destinations, prefer the dashboard integration instead of duplic
 
 - [Post-call automation guide](https://docs.omnidim.io/docs/integrations/zapier-make-n8n)
 - [Tutorial: get post-call data](https://www.youtube.com/watch?v=__hZ9u6Em9w)
-- Need help adapting this pattern? [Join the OmniDimension Discord](https://discord.gg/kdjzykMTHJ)
+
+## Help and community
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this pattern.
+- [Ask an API and integrations question ↗](https://community.omnidim.io) for a durable answer or design discussion.

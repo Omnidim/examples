@@ -4,6 +4,8 @@ Give an OmniDimension agent access to data or actions in an existing system. Thi
 
 The services use fixtures by default. Replace the fixture functions with calls to your CRM, database, booking system, or internal API when you are ready.
 
+Part of [OmniDimension examples](https://github.com/Omnidim/examples).
+
 ## Choose an implementation
 
 | Runtime | Start command | Tests |
@@ -48,4 +50,8 @@ The local services intentionally contain no authentication because they are fixt
 
 - [Custom API documentation](https://docs.omnidim.io/docs/integrations/custom-api)
 - [Tutorial: connect an agent to a custom API](https://www.youtube.com/watch?v=Ln3Y7LvL0BM)
-- Need help adapting this pattern? [Join the OmniDimension Discord](https://discord.gg/kdjzykMTHJ)
+
+## Help and community
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this pattern.
+- [Ask an API and integrations question ↗](https://community.omnidim.io) for a durable answer or design discussion.

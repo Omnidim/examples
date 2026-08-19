@@ -90,4 +90,8 @@ from creating a live session.
 - [Web SDK documentation](https://docs.omnidim.io/docs/sdks/web)
 - [Create a web session](https://docs.omnidim.io/docs/api-reference/sessions/createSession)
 - [OmniDimension tutorials](https://www.youtube.com/@OmniDimensionio)
-- [Developer community](https://discord.gg/kdjzykMTHJ)
+
+## Help and community
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this example.
+- [Ask a longer question or share your build ↗](https://community.omnidim.io) so others can find it later.
