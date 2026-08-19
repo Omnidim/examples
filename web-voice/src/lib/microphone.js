@@ -1,3 +1,7 @@
+// Copyright (c) 2026 OmniDimension
+// SPDX-License-Identifier: MIT
+// Part of https://github.com/Omnidim/examples
+
 /**
  * Requests microphone access while the user is still in the click action.
  * OmniDimension's WebSession opens its own capture stream immediately after.
