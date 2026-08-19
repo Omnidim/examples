@@ -85,15 +85,6 @@ flowchart TB
   Client[AI coding client] <--> |mcp| Agent
 ```
 
-## Development
-
-Examples are intentionally independent. Change into the directory you want to
-run and follow its README. TypeScript examples use npm. Python examples use
-Python 3.10 or later and can be run in a virtual environment.
-
-Before opening a pull request, run the checks listed in the example you
-changed. Continuous integration runs the repository-wide smoke checks.
-
 ## Contributing
 
 Read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a change. We welcome

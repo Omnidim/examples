@@ -2,6 +2,15 @@
 
 Thank you for improving the OmniDimension examples.
 
+## Run and check an example
+
+Examples are intentionally independent. Change into the directory you want to
+run and follow its README. TypeScript examples use npm. Python examples use
+Python 3.10 or later and can run in a virtual environment.
+
+Before opening a pull request, run the checks listed in the example you
+changed. Continuous integration runs the repository-wide smoke checks.
+
 ## Before you open a pull request
 
 - Keep the example focused on one integration pattern.
