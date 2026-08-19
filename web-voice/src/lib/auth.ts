@@ -1,3 +1,7 @@
+// Copyright (c) 2026 OmniDimension
+// SPDX-License-Identifier: MIT
+// Part of https://github.com/Omnidim/examples
+
 export type AuthenticatedUser = { id: string };
 
 export async function getAuthenticatedUser(_request: Request): Promise<AuthenticatedUser | null> {

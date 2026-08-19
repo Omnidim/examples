@@ -1,3 +1,7 @@
+// Copyright (c) 2026 OmniDimension
+// SPDX-License-Identifier: MIT
+// Part of https://github.com/Omnidim/examples
+
 export function isInCall(state) {
   return state === "connecting" || state === "active";
 }

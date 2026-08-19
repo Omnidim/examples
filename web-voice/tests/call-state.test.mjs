@@ -1,3 +1,7 @@
+// Copyright (c) 2026 OmniDimension
+// SPDX-License-Identifier: MIT
+// Part of https://github.com/Omnidim/examples
+
 import assert from "node:assert/strict";
 import test from "node:test";
 import { getStatusLabel, isInCall } from "../src/lib/call-state.js";

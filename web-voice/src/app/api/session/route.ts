@@ -1,3 +1,7 @@
+// Copyright (c) 2026 OmniDimension
+// SPDX-License-Identifier: MIT
+// Part of https://github.com/Omnidim/examples
+
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "../../../lib/auth";
 import { sessionEndpoint, sessionWebSocketUrl } from "../../../lib/session-url";

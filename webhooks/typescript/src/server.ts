@@ -1,3 +1,7 @@
+// Copyright (c) 2026 OmniDimension
+// SPDX-License-Identifier: MIT
+// Part of https://github.com/Omnidim/examples
+
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { parsePostCallEvent, eventSummary } from "./event.js";
 
