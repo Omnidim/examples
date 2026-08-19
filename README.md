@@ -1,10 +1,12 @@
-<table align="center">
-  <tr>
-    <td align="center" width="116" height="116" bgcolor="#ffffff">
-      <a href="https://omnidim.io"><img src="./assets/omnidim-icon-light.png" width="84" alt="OmniDimension"></a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://omnidim.io">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/omnidim-icon-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="./assets/omnidim-icon-light.png">
+      <img src="./assets/omnidim-icon-light.png" width="84" alt="OmniDimension">
+    </picture>
+  </a>
+</p>
 
 <h1 align="center">OmniDimension examples</h1>
 
