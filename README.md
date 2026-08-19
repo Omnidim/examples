@@ -1,6 +1,10 @@
-<p align="center">
-  <a href="https://omnidim.io"><img src="./assets/omnidim-icon-light.png" width="92" alt="OmniDimension"></a>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="116" height="116" bgcolor="#ffffff">
+      <a href="https://omnidim.io"><img src="./assets/omnidim-icon-light.png" width="84" alt="OmniDimension"></a>
+    </td>
+  </tr>
+</table>
 
 <h1 align="center">OmniDimension examples</h1>
 
