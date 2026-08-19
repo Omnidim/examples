@@ -1,10 +1,16 @@
 # OmniDimension examples
 
 <p>
-  <a href="https://github.com/Omnidim/examples"><img src="https://img.shields.io/badge/GitHub-Omnidim%2Fexamples-181717?logo=github&logoColor=white" alt="Omnidim examples on GitHub"></a>
-  <a href="https://github.com/Omnidim/examples/actions/workflows/ci.yml"><img src="https://github.com/Omnidim/examples/actions/workflows/ci.yml/badge.svg" alt="Continuous integration"></a>
+  <a href="https://github.com/Omnidim/examples/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white" alt="Continuous integration"></a>
+  <a href="https://github.com/Omnidim/examples/actions/workflows/codeql.yml"><img src="https://img.shields.io/badge/security-CodeQL-181717?logo=github&logoColor=white" alt="CodeQL analysis"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-0d9488" alt="MIT license"></a>
+  <a href="https://github.com/Omnidim/examples/issues"><img src="https://img.shields.io/github/issues/Omnidim/examples?label=issues" alt="Open issues"></a>
+  <a href="./CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-0d9488" alt="Contributions welcome"></a>
+</p>
+
+<p>
   <a href="https://docs.omnidim.io/docs"><img src="https://img.shields.io/badge/docs-OmniDimension-0d9488" alt="OmniDimension developer documentation"></a>
-  <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join the OmniDimension Discord"></a>
+  <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join our Discord community"></a>
   <a href="https://community.omnidim.io"><img src="https://img.shields.io/badge/forum-community.omnidim.io-334155" alt="OmniDimension community forum"></a>
 </p>
 
