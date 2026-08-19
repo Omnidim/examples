@@ -10,4 +10,5 @@ __pycache__/
 .ruff_cache/
 .venv/
 *.local.md
+*.tsbuildinfo
 CLAUDE.local.md

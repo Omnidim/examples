@@ -3,6 +3,8 @@
 This CLI validates a CSV file and prints a dry-run campaign payload by default.
 Use `--live` only after adding your own API key and phone number ID.
 
+Part of [OmniDimension examples](https://github.com/Omnidim/examples).
+
 ## Run locally
 
 ```bash
@@ -22,3 +24,7 @@ an implicit dependency.
 
 See the [bulk call guide](https://docs.omnidim.io/docs/bulk-calls/overview) and
 [bulk campaign API reference](https://docs.omnidim.io/docs/api-reference/bulk-calls/createBulkCall).
+
+## Help
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.
