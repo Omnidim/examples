@@ -29,7 +29,9 @@ export default async function Page() {
 
       <footer className="example-footer">
         <span>Need help adapting this example?</span>
-        <a href="https://discord.gg/kdjzykMTHJ" target="_blank" rel="noreferrer">Join the community</a>
+        <a href="https://discord.gg/kdjzykMTHJ" target="_blank" rel="noreferrer">
+          Join our Discord community <span aria-hidden="true">↗</span>
+        </a>
       </footer>
     </main>
   );
