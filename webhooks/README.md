@@ -52,7 +52,6 @@ For first-party destinations, prefer the dashboard integration instead of duplic
 - [Post-call automation guide](https://docs.omnidim.io/docs/integrations/zapier-make-n8n)
 - [Tutorial: get post-call data](https://www.youtube.com/watch?v=__hZ9u6Em9w)
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this pattern.
-- [Ask an API and integrations question ↗](https://community.omnidim.io) for a durable answer or design discussion.

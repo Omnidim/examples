@@ -22,7 +22,6 @@ review calls without publishing credentials in the repository.
 For the full product guide, see the [MCP documentation](https://docs.omnidim.io/docs/mcp)
 and [Connect OmniDimension to Claude](https://www.youtube.com/watch?v=5dh4SumJgZw).
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help connecting your coding client.
-- [Ask a longer question or share your workflow ↗](https://community.omnidim.io) so others can find it later.

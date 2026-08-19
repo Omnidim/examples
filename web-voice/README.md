@@ -91,7 +91,6 @@ from creating a live session.
 - [Create a web session](https://docs.omnidim.io/docs/api-reference/sessions/createSession)
 - [OmniDimension tutorials](https://www.youtube.com/@OmniDimensionio)
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this example.
-- [Ask a longer question or share your build ↗](https://community.omnidim.io) so others can find it later.

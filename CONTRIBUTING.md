@@ -21,4 +21,4 @@ from logs before posting.
 ## Questions and sharing builds
 
 - Ask implementation questions in the [OmniDimension Discord](https://discord.gg/kdjzykMTHJ).
-- Share longer write-ups and project variations at [community.omnidim.io](https://community.omnidim.io).
+- Share project variations with the [OmniDimension Discord community](https://discord.gg/kdjzykMTHJ).
