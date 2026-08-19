@@ -1,0 +1,17 @@
+{
+  "name": "omnidimension-post-call-webhooks-typescript",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "fixture": "curl -i -X POST http://localhost:8788/webhooks/omnidimension -H 'content-type: application/json' --data-binary @../fixtures/post-call.json",
+    "check": "tsc --noEmit",
+    "test": "tsx --test test/event.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
