@@ -41,6 +41,28 @@ test("cumulative user snapshots replace the visible line", () => {
   assert.deepEqual(updated, [{ id: "user-1", role: "user", text: "I would like to discuss", final: false }]);
 });
 
+test("revised user snapshots keep one open transcript line", () => {
+  const initial = [{ id: "user-1", role: "user", text: "Hey, Arun. How are you?", final: false }];
+  const updated = applyTranscriptSnapshot(
+    initial,
+    { role: "user", text: "Now tell me how you are doing?", final: false },
+    () => "user-2",
+  );
+
+  assert.deepEqual(updated, [{ id: "user-1", role: "user", text: "Now tell me how you are doing?", final: false }]);
+});
+
+test("the final user result replaces the open transcript line", () => {
+  const initial = [{ id: "user-1", role: "user", text: "Now tell me", final: false }];
+  const updated = applyTranscriptSnapshot(
+    initial,
+    { role: "user", text: "Hey, Arun. How are you? Now tell me how you are doing?", final: true },
+    () => "user-2",
+  );
+
+  assert.deepEqual(updated, [{ id: "user-1", role: "user", text: "Hey, Arun. How are you? Now tell me how you are doing?", final: true }]);
+});
+
 test("a new speaker starts a new transcript line", () => {
   const initial = [{ id: "agent-1", role: "agent", text: "How can I help?", final: true }];
   const updated = applyTranscriptSnapshot(
