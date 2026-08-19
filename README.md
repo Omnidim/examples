@@ -1,29 +1,20 @@
-<table>
-  <tr>
-    <td align="center" bgcolor="#101312">
-      <a href="https://omnidim.io"><img src="./web-voice/public/omnidim-logo-dark.png" width="430" alt="OmniDimension"></a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://omnidim.io"><img src="./assets/omnidim-logo-light.png" width="430" alt="OmniDimension"></a>
+</p>
 
 <h1 align="center">OmniDimension examples</h1>
 
 <p align="center">Reference implementations for connecting voice agents to the systems you already use.</p>
 
 <p align="center">
-  <a href="https://github.com/Omnidim/examples/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white" alt="Continuous integration"></a>
-  <a href="https://github.com/Omnidim/examples/actions/workflows/codeql.yml"><img src="https://img.shields.io/badge/security-CodeQL-181717?logo=github&logoColor=white" alt="CodeQL analysis"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-0d9488" alt="MIT license"></a>
-  <a href="https://github.com/Omnidim/examples/issues"><img src="https://img.shields.io/github/issues/Omnidim/examples?label=issues" alt="Open issues"></a>
-  <a href="./CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-0d9488" alt="Contributions welcome"></a>
   <a href="https://docs.omnidim.io/docs"><img src="https://img.shields.io/badge/docs-OmniDimension-0d9488" alt="OmniDimension developer documentation"></a>
   <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join our Discord community"></a>
 </p>
 
 ## New to OmniDimension?
 
-Start with the [developer documentation](https://docs.omnidim.io/docs), then use
-the [Web SDK guide](https://docs.omnidim.io/docs/sdks/web), [API
+Use the [Web SDK guide](https://docs.omnidim.io/docs/sdks/web), [API
 reference](https://docs.omnidim.io/docs/api-reference), and [video
 tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
 
@@ -95,13 +86,6 @@ flowchart TB
   Agent --> |webhooks| Destination[CRM, workflow, or data store]
   Client[AI coding client] <--> |mcp| Agent
 ```
-
-## Documentation and community
-
-- [Developer documentation](https://docs.omnidim.io/docs)
-- [Video tutorials](https://docs.omnidim.io/docs/tutorials)
-- [Report a bug](https://github.com/Omnidim/examples/issues)
-- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for build questions, discussion, and sharing what you ship.
 
 ## Development
 

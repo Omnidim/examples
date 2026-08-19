@@ -9,7 +9,8 @@ Thank you for improving the OmniDimension examples.
 - Put credentials only in `.env` files. Commit `.env.example` with placeholder
   values instead.
 - Add or update the README with setup, test, cleanup, and documentation links.
-- Add the repository header to executable example and test source files:
+- If your pull request adds an executable example or test source file, add this
+  repository header at the top:
 
   ```text
   Copyright (c) 2026 OmniDimension
@@ -28,5 +29,5 @@ from logs before posting.
 
 ## Questions and sharing builds
 
-- Ask implementation questions in the [OmniDimension Discord](https://discord.gg/kdjzykMTHJ).
-- Share project variations with the [OmniDimension Discord community](https://discord.gg/kdjzykMTHJ).
+Ask implementation questions or share a project variation in the
+[OmniDimension Discord community](https://discord.gg/kdjzykMTHJ).
