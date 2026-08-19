@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask the builder community on Discord
+    url: https://discord.gg/kdjzykMTHJ
+    about: Get help adapting an example or compare implementation approaches.
+  - name: Ask a longer question or share a build
+    url: https://community.omnidim.io
+    about: Create a durable community question or Show & Tell post.
+  - name: Read the developer documentation
+    url: https://docs.omnidim.io/docs
+    about: Check the API, SDK, dashboard, and integration references.
