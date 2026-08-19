@@ -9,6 +9,14 @@ Thank you for improving the OmniDimension examples.
 - Put credentials only in `.env` files. Commit `.env.example` with placeholder
   values instead.
 - Add or update the README with setup, test, cleanup, and documentation links.
+- Add the repository header to executable example and test source files:
+
+  ```text
+  Copyright (c) 2026 OmniDimension
+  SPDX-License-Identifier: MIT
+  Part of https://github.com/Omnidim/examples
+  ```
+
 - Do not include call recordings, personal information, account identifiers, or
   internal service URLs.
 
