@@ -3,6 +3,8 @@
 Validate a CSV contact list, review the campaign payload, then create a bulk
 call campaign when you explicitly opt in to live mode.
 
+Part of [OmniDimension examples](https://github.com/Omnidim/examples).
+
 ## Run locally
 
 ```bash
@@ -31,3 +33,7 @@ The API key should stay in `.env`, never browser code or source control.
 - [Bulk call API reference](https://docs.omnidim.io/docs/api-reference/bulk-calls/createBulkCall)
 - [Bulk call guide](https://docs.omnidim.io/docs/bulk-calls/overview)
 - [Run bulk call campaigns tutorial](https://www.youtube.com/watch?v=szkkFgJew7I)
+
+## Help
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.

@@ -1,6 +1,13 @@
 import { VoiceConsole } from "@/components/voice-console";
+import { getAgentContext } from "@/lib/agent-context";
 
-export default function Page() {
+export default async function Page() {
+  const agent = await getAgentContext();
+  const title = agent ? `Talk to ${agent.name}.` : "A voice agent, in your product.";
+  const description = agent
+    ? `You are about to connect to the configured ${agent.name} agent. Your microphone remains off until you start the call.`
+    : "This small interface is a complete browser call flow. Try the safe local simulation first, then connect it to your own agent when you are ready.";
+
   return (
     <main className="page-shell">
       <header className="site-header">
@@ -14,17 +21,17 @@ export default function Page() {
 
       <section className="example-intro" aria-labelledby="example-title">
         <p className="eyebrow">Web SDK reference</p>
-        <h1 id="example-title">A voice agent, in your product.</h1>
-        <p>
-          This small interface is a complete browser call flow. Try the safe local simulation first, then connect it to your own agent when you are ready.
-        </p>
+        <h1 id="example-title">{title}</h1>
+        <p>{description}</p>
       </section>
 
-      <VoiceConsole />
+      <VoiceConsole agent={agent} />
 
       <footer className="example-footer">
         <span>Need help adapting this example?</span>
-        <a href="https://discord.gg/kdjzykMTHJ" target="_blank" rel="noreferrer">Join the community</a>
+        <a href="https://discord.gg/kdjzykMTHJ" target="_blank" rel="noreferrer">
+          Join our Discord community <span aria-hidden="true">↗</span>
+        </a>
       </footer>
     </main>
   );

@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "../../../lib/auth";
-
-const SESSION_ENDPOINT = "https://omnidim.io/api/v1/sessions/create";
+import { sessionEndpoint, sessionWebSocketUrl } from "../../../lib/session-url";
 
 function isLiveMode() {
   return process.env.NEXT_PUBLIC_OMNIDIM_MODE === "live";
@@ -31,7 +30,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const response = await fetch(SESSION_ENDPOINT, {
+    const response = await fetch(sessionEndpoint(), {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -54,8 +53,9 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ mode: "live" as const, wsUrl: data.ws_url });
-  } catch {
-    return NextResponse.json({ message: "Unable to reach OmniDimension. Check your connection and try again." }, { status: 502 });
+    return NextResponse.json({ mode: "live" as const, wsUrl: sessionWebSocketUrl(data.ws_url) });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unable to reach OmniDimension. Check your connection and try again.";
+    return NextResponse.json({ message }, { status: 502 });
   }
 }

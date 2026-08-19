@@ -4,6 +4,8 @@ Connect an AI coding client to OmniDimension through the hosted OAuth server.
 Each setup uses `https://mcp.omnidim.io/mcp` and authenticates in the browser on
 first use.
 
+Part of [OmniDimension examples](https://github.com/Omnidim/examples).
+
 ## Client setup
 
 - [Claude Code](./claude-code.md)
@@ -20,4 +22,6 @@ review calls without publishing credentials in the repository.
 For the full product guide, see the [MCP documentation](https://docs.omnidim.io/docs/mcp)
 and [Connect OmniDimension to Claude](https://www.youtube.com/watch?v=5dh4SumJgZw).
 
-Need help? [Join the builders on Discord](https://discord.gg/kdjzykMTHJ).
+## Help
+
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help connecting your coding client.
