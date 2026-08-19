@@ -9,6 +9,7 @@ on:
     - cron: "24 3 * * 1"
 
 permissions:
+  actions: read
   security-events: write
   contents: read
 

@@ -35,11 +35,12 @@ export function parseContacts(csv: string): Contact[] {
 
   return rows.filter(Boolean).map((row, index) => {
     const values = row.split(',').map((value) => value.trim());
-    const contact = Object.fromEntries(headers.map((header, valueIndex) => [header, values[valueIndex]]));
-    if (!E164_PHONE.test(contact.phone_number ?? '')) {
+    const fields = Object.fromEntries(headers.map((header, valueIndex) => [header, values[valueIndex] ?? ''])) as Record<string, string>;
+    const phoneNumber = fields.phone_number;
+    if (!E164_PHONE.test(phoneNumber)) {
       throw new Error(`Row ${index + 2} has an invalid phone_number. Use E.164 format, for example +15551234567.`);
     }
-    return contact;
+    return { ...fields, phone_number: phoneNumber };
   });
 }
 
