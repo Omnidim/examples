@@ -51,7 +51,6 @@ The local services intentionally contain no authentication because they are fixt
 - [Custom API documentation](https://docs.omnidim.io/docs/integrations/custom-api)
 - [Tutorial: connect an agent to a custom API](https://www.youtube.com/watch?v=Ln3Y7LvL0BM)
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this pattern.
-- [Ask an API and integrations question ↗](https://community.omnidim.io) for a durable answer or design discussion.

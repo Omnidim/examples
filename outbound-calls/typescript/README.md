@@ -34,7 +34,6 @@ The API key should stay in `.env`, never browser code or source control.
 - [Bulk call guide](https://docs.omnidim.io/docs/bulk-calls/overview)
 - [Run bulk call campaigns tutorial](https://www.youtube.com/watch?v=szkkFgJew7I)
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.
-- [Ask a longer question or share your workflow ↗](https://community.omnidim.io) so others can find it later.

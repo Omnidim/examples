@@ -25,7 +25,6 @@ an implicit dependency.
 See the [bulk call guide](https://docs.omnidim.io/docs/bulk-calls/overview) and
 [bulk campaign API reference](https://docs.omnidim.io/docs/api-reference/bulk-calls/createBulkCall).
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.
-- [Ask a longer question or share your workflow ↗](https://community.omnidim.io) so others can find it later.

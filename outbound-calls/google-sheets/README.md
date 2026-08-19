@@ -16,7 +16,6 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 For the platform workflow, see [dispatch voice AI calls from a CRM or Google
 Sheets](https://www.youtube.com/watch?v=YOBEpWgyYDM).
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.
-- [Ask a longer question or share your workflow ↗](https://community.omnidim.io) so others can find it later.

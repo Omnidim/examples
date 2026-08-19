@@ -11,7 +11,6 @@
 <p>
   <a href="https://docs.omnidim.io/docs"><img src="https://img.shields.io/badge/docs-OmniDimension-0d9488" alt="OmniDimension developer documentation"></a>
   <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join our Discord community"></a>
-  <a href="https://community.omnidim.io"><img src="https://img.shields.io/badge/forum-community.omnidim.io-334155" alt="OmniDimension community forum"></a>
 </p>
 
 Reference implementations for adding OmniDimension voice agents to web apps,
@@ -63,8 +62,7 @@ flowchart LR
 
 ### Get help or share a build
 
-- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for build questions and discussion.
-- [Ask a longer question or share a build ↗](https://community.omnidim.io) so others can find it later.
+- [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for build questions, discussion, and sharing what you ship.
 
 If you adapt an example, share what you built. Questions and working variants
 help make these examples better for everyone.

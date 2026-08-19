@@ -28,7 +28,6 @@ and the [bulk calling tutorial](https://www.youtube.com/watch?v=szkkFgJew7I).
 - Use only contacts you are authorized to call.
 - Keep real contact lists outside this repository.
 
-## Help and community
+## Help
 
 - [Join our Discord community ↗](https://discord.gg/kdjzykMTHJ) for help adapting this workflow.
-- [Ask a longer question or share your workflow ↗](https://community.omnidim.io) so others can find it later.
