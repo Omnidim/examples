@@ -18,14 +18,6 @@ Use the [Web SDK guide](https://docs.omnidim.io/docs/sdks/web), [API
 reference](https://docs.omnidim.io/docs/api-reference), and [video
 tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
 
-## Start with a safe local run
-
-1. Choose an integration pattern below.
-2. Follow its README and run the included fixture, dry run, or local simulation.
-3. Add your OmniDimension credentials only when you are ready to make a live connection.
-
-No example makes a live call by default.
-
 ## Integration patterns
 
 <table>
