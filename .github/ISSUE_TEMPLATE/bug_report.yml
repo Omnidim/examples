@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a reproducible problem with an OmniDimension example.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use Discord for implementation questions. This form is for reproducible example bugs.
+        Do not include API keys, recordings, customer data, account identifiers, or internal URLs.
+  - type: dropdown
+    id: example
+    attributes:
+      label: Example
+      options:
+        - Web voice
+        - Custom API integration
+        - Outbound calls
+        - Post-call webhooks
+        - OmniDimension MCP
+        - Repository documentation or automation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the command or interaction that triggers the problem.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Redact secrets and private data from logs.
+    validations:
+      required: true
