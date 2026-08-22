@@ -8,7 +8,7 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 ## Run locally
 
 ```bash
-npm install
+npm ci
 npm start -- ../sample-contacts.csv
 ```
 
