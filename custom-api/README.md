@@ -10,7 +10,7 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 
 | Runtime | Start command | Tests |
 | --- | --- | --- |
-| TypeScript | `npm run dev` | `npm test` |
+| TypeScript | `npm ci && npm run dev` | `npm test` |
 | Python | `python server.py` | `python -m unittest discover -s tests` |
 
 Both implementations expose the same API on port `8787` by default.

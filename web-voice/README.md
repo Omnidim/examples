@@ -10,7 +10,7 @@ The example starts in local simulation mode. It does not request a microphone or
 
 ```bash
 cd web-voice
-npm install
+npm ci
 npm run dev
 ```
 

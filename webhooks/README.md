@@ -10,7 +10,7 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 
 | Runtime | Start command | Send fixture | Tests |
 | --- | --- | --- | --- |
-| TypeScript | `npm run dev` | `npm run fixture` | `npm test` |
+| TypeScript | `npm ci && npm run dev` | `npm run fixture` | `npm test` |
 | Python | `python server.py` | `python send_fixture.py` | `python -m unittest discover -s tests` |
 
 Both receivers listen on `http://localhost:8788/webhooks/omnidimension` by default. A local receiver cannot be reached by OmniDimension. Use a temporary HTTPS tunnel for dashboard testing, then replace it with a deployed endpoint you control.
