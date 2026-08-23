@@ -13,6 +13,7 @@ jobs:
     name: TypeScript examples
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         directory: [web-voice, custom-api/typescript, webhooks/typescript, outbound-calls/typescript]
     steps:
@@ -31,6 +32,7 @@ jobs:
     name: Python examples
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         directory: [custom-api/python, webhooks/python, outbound-calls/python]
     steps:
