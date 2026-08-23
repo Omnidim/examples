@@ -1,10 +1,14 @@
 # Web voice
 
-A small Next.js reference application for adding an OmniDimension voice agent to a website. It includes the browser call states, transcript rendering, mute and hang-up controls, and a server route that creates a short-lived session without exposing your API key.
+A small Next.js app that puts an OmniDimension voice agent on a website.
+
+![The web-voice call console: live status, a voice visualizer, mute and end-call
+controls, and a running two-speaker transcript](./docs/web-voice-call.png)
+
+That is the real interface, running in simulation mode with no account and no
+microphone. Nothing reaches an external service until you enable live mode.
 
 Part of [OmniDimension examples](https://github.com/Omnidim/examples).
-
-The example starts in local simulation mode. It does not request a microphone or call any external service until you explicitly enable live mode.
 
 ## Run it locally
 
@@ -26,28 +30,23 @@ Open [http://localhost:3000](http://localhost:3000), then select **Start a call*
 5. Apply your normal per-user rate limits to `app/api/session/route.ts`.
 6. Restart the development server and start a call.
 
-**Step 4 is not optional.** Until `getAuthenticatedUser` returns a user, live
-mode answers every call attempt with `401` and this message:
+**Step 4 is not optional.** Until `getAuthenticatedUser` returns a user, every
+live call attempt answers `401`:
 
 ```text
 Live sessions require an authenticated application user. Configure src/lib/auth.ts first.
 ```
 
-That is the example working as intended, not a broken build. Session creation
-spends your account's calling capacity, so the guard stays until you decide who
-is allowed to start a call.
+That is the guard working, not a broken build. Session creation spends your
+account's calling capacity, so never open live mode to anonymous traffic.
 
-`OMNIDIM_API_KEY` is read only by `app/api/session/route.ts`. The browser receives only a short-lived, single-conversation WebSocket URL. Do not use a `NEXT_PUBLIC_` prefix for your API key.
+`OMNIDIM_API_KEY` is read only by `app/api/session/route.ts`. The browser gets
+only a short-lived, single-conversation WebSocket URL. Never put your API key
+behind a `NEXT_PUBLIC_` prefix.
 
-Live mode is intentionally blocked until the authentication adapter returns a
-user. Do not enable it for anonymous traffic: session creation spends your
-account's calling capacity. The example always creates sessions through the
-public OmniDimension API and uses the returned WebSocket URL directly.
-
-When live mode is configured, the page loads the selected agent's name, voice,
-languages, and welcome message from OmniDimension. If an optional field is not
-configured, the interface uses a clear fallback instead of showing an empty
-state.
+Once live, the page loads the agent's name, voice, languages, and welcome
+message from OmniDimension, with a clear fallback for any optional field you
+have not set.
 
 ## Verify a live integration
 

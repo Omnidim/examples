@@ -17,8 +17,6 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 
 ## What a dry run looks like
 
-Against the included [`sample-contacts.csv`](./sample-contacts.csv):
-
 ```console
 $ python -m src.main ../sample-contacts.csv --name "Demo campaign"
 {
@@ -39,10 +37,9 @@ $ python -m src.main ../sample-contacts.csv --name "Demo campaign"
 }
 ```
 
-Every column in the CSV is carried through to the campaign payload, so extra
-columns like `reason_for_call` above reach the agent alongside the number.
-Validation runs before anything else, and a bad number stops the whole batch
-rather than dialling part of it:
+Every CSV column is carried through, so `reason_for_call` reaches the agent
+along with the number. A bad number stops the whole batch rather than dialling
+part of it:
 
 ```console
 $ python -m src.main contacts.csv

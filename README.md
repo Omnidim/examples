@@ -24,20 +24,7 @@ Use the [Web SDK guide](https://docs.omnidim.io/docs/sdks/web), [API
 reference](https://docs.omnidim.io/docs/api-reference), and [video
 tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
 
-**Where to start.** Every example runs on fixtures before you add credentials,
-but they are not equal in effort. In rough order:
-
-| Start here | Needs | Time to first run |
-| --- | --- | --- |
-| [`web-voice`](./web-voice) | Node.js | Minutes. Simulation mode needs no account |
-| [`webhooks`](./webhooks) | Node.js or Python | Minutes. Send yourself the sample payload |
-| [`outbound-calls`](./outbound-calls) | Node.js or Python, a CSV | Minutes for a dry run |
-| [`mcp`](./mcp) | An AI coding client, an account | One command, then browser sign-in |
-| [`custom-api`](./custom-api) | Node.js or Python, dashboard access | Longest. Each action is configured on the agent |
-
-Prefer no code at all? The [verified n8n
-node](https://n8n.io/integrations/omnidimension-trigger/) covers agents,
-campaigns, call dispatch, and post-call triggers from a workflow editor.
+Start with [`web-voice`](./web-voice). It runs in minutes and needs no account.
 
 ## Integration patterns
 
@@ -73,9 +60,8 @@ campaigns, call dispatch, and post-call triggers from a workflow editor.
       Connect OmniDimension to Claude Code, Codex, Cursor, or VS Code.
     </td>
     <td width="50%" valign="top">
-      <strong>Talk to the builders</strong><br>
-      Get unstuck, compare approaches, and share what you are shipping.<br><br>
-      <a href="https://discord.gg/kdjzykMTHJ">Join our Discord community ↗</a>
+      <a href="https://n8n.io/integrations/omnidimension-trigger/"><strong>Build it without code ↗</strong></a><br>
+      Our verified n8n node runs calls and reacts to them from a workflow editor.
     </td>
   </tr>
 </table>

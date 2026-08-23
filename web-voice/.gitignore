@@ -2,3 +2,7 @@ node_modules
 .next
 .env.local
 coverage
+
+# Next.js 16 regenerates these on every dev run
+AGENTS.md
+CLAUDE.md

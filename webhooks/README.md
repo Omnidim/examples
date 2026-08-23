@@ -31,24 +31,20 @@ The receiver validates the stable top-level fields used in the documented sample
 
 No OmniDimension webhook signing scheme or signature header is documented. This example does not invent one. Before production, place the endpoint behind controls appropriate to your environment, such as an API gateway, private network path, or an allowlist managed by your infrastructure team.
 
-## Using n8n? Start with the node instead
+## Using n8n? Skip this receiver
 
-For n8n specifically you do not need this receiver at all. The verified
-[OmniDimension node](https://n8n.io/integrations/omnidimension-trigger/) has a
-Trigger that starts a workflow when a call completes:
+Our [verified n8n node](https://n8n.io/integrations/omnidimension-trigger/)
+starts a workflow when a call completes, so there is nothing to host:
 
-1. In n8n, open **Settings**, **Community Nodes**, **Install**, and enter
+1. In n8n: **Settings**, **Community Nodes**, **Install**, enter
    `n8n-nodes-omnidimension`.
 2. Add the **OmniDimension Trigger** node and copy its webhook URL.
-3. Paste that URL into your agent's **Post-Call** tab, **Webhook**, in the
-   OmniDimension dashboard.
-4. Optionally set the node's agent-ID filter so one workflow handles one agent.
+3. Paste it into your agent's **Post-Call** tab, **Webhook**.
 
-The same package ships an action node covering agents, bulk calls, call
-dispatch, knowledge base, and phone numbers, so a workflow can both start calls
-and react to them. Source: [Omnidim/n8n-nodes-omnidimension](https://github.com/Omnidim/n8n-nodes-omnidimension).
+The same package also dispatches calls and manages agents, so one workflow can
+both start calls and react to them.
 
-Use the receiver below when your destination has no first-party node.
+Use the receiver below for any destination without a first-party node.
 
 ## Forward data to another workflow
 
