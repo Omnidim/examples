@@ -15,6 +15,42 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 - [`python`](./python): Python CLI for backend and data workflows
 - [`google-sheets`](./google-sheets): Apps Script for Google Sheets
 
+## What a dry run looks like
+
+Against the included [`sample-contacts.csv`](./sample-contacts.csv):
+
+```console
+$ python -m src.main ../sample-contacts.csv --name "Demo campaign"
+{
+  "mode": "dry-run",
+  "name": "Demo campaign",
+  "contacts": [
+    {
+      "phone_number": "+15550101001",
+      "name": "Demo User",
+      "reason_for_call": "Product update"
+    },
+    {
+      "phone_number": "+15550101002",
+      "name": "Sample Contact",
+      "reason_for_call": "Appointment reminder"
+    }
+  ]
+}
+```
+
+Every column in the CSV is carried through to the campaign payload, so extra
+columns like `reason_for_call` above reach the agent alongside the number.
+Validation runs before anything else, and a bad number stops the whole batch
+rather than dialling part of it:
+
+```console
+$ python -m src.main contacts.csv
+Row 3 has an invalid phone_number. Use E.164 format, for example +15551234567.
+```
+
+Review that output, then add `--live` to dispatch the same plan.
+
 ## Requirements for live campaigns
 
 Before a live run, create and test an agent, attach it to a phone number, and
