@@ -18,13 +18,13 @@
   <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join our Discord community"></a>
 </p>
 
-## Integration patterns
+## Connect your product
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="./web-voice"><strong>Embed voice in your product</strong></a><br>
-      Add browser calls, live transcripts, mute, and hang-up controls.
+      <a href="./web-voice"><strong>Add voice to your website</strong></a><br>
+      Browser calls with live transcripts, mute, and hang-up controls.
     </td>
     <td width="50%" valign="top">
       <a href="./custom-api"><strong>Connect the agent to your backend</strong></a><br>
@@ -43,7 +43,7 @@
   </tr>
 </table>
 
-## Developer tooling
+## Run it your way
 
 <table>
   <tr>
@@ -69,6 +69,10 @@ flowchart TB
   Agent --> |webhooks| Destination[CRM, workflow, or data store]
   Client[AI coding client] <--> |mcp| Agent
 ```
+
+Want a finished agent rather than the wiring? See [example
+builds](https://docs.omnidim.io/docs/examples) for booking, support, recruiting,
+and more.
 
 ## Contributing
 
