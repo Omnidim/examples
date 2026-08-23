@@ -179,7 +179,7 @@ export function VoiceConsole({ agent }: { agent: AgentContext | null }) {
           <span />
         </div>
         <div className="call-meta">
-          <div className="status-line"><span className={`status-dot status-${callState}`} />{statusLabel}</div>
+          <div className="status-line"><span className={`status-pill status-${callState}`}>{statusLabel}</span></div>
           <p>{callDescription}</p>
         </div>
         <div className="call-actions">
