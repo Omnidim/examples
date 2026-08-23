@@ -10,7 +10,7 @@
     "test": "tsx --test test/event.test.ts"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/node": "^26.2.0",
     "tsx": "^4.19.2",
     "typescript": "^7.0.2"
   }
