@@ -31,13 +31,32 @@ The receiver validates the stable top-level fields used in the documented sample
 
 No OmniDimension webhook signing scheme or signature header is documented. This example does not invent one. Before production, place the endpoint behind controls appropriate to your environment, such as an API gateway, private network path, or an allowlist managed by your infrastructure team.
 
+## Using n8n? Start with the node instead
+
+For n8n specifically you do not need this receiver at all. The verified
+[OmniDimension node](https://n8n.io/integrations/omnidimension-trigger/) has a
+Trigger that starts a workflow when a call completes:
+
+1. In n8n, open **Settings**, **Community Nodes**, **Install**, and enter
+   `n8n-nodes-omnidimension`.
+2. Add the **OmniDimension Trigger** node and copy its webhook URL.
+3. Paste that URL into your agent's **Post-Call** tab, **Webhook**, in the
+   OmniDimension dashboard.
+4. Optionally set the node's agent-ID filter so one workflow handles one agent.
+
+The same package ships an action node covering agents, bulk calls, call
+dispatch, knowledge base, and phone numbers, so a workflow can both start calls
+and react to them. Source: [Omnidim/n8n-nodes-omnidimension](https://github.com/Omnidim/n8n-nodes-omnidimension).
+
+Use the receiver below when your destination has no first-party node.
+
 ## Forward data to another workflow
 
 Set `FORWARD_URL` to an HTTPS endpoint you own and set
 `FORWARD_URL_ALLOWED_HOSTS` to its comma-separated hostname allowlist. The
 receiver refuses a target that is not explicitly allowed. This works for a
-generic REST endpoint and for the webhook URLs supplied by Make, Zapier, n8n,
-or GHL, all of which are documented post-call destinations.
+generic REST endpoint and for the webhook URLs supplied by Make, Zapier, or
+GHL, all of which are documented post-call destinations.
 
 For first-party destinations, prefer the dashboard integration instead of duplicating credentials in this receiver:
 
