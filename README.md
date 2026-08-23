@@ -18,14 +18,6 @@
   <a href="https://discord.gg/kdjzykMTHJ"><img src="https://img.shields.io/badge/community-Discord-5865F2?logo=discord&logoColor=white" alt="Join our Discord community"></a>
 </p>
 
-## New to OmniDimension?
-
-Use the [Web SDK guide](https://docs.omnidim.io/docs/sdks/web), [API
-reference](https://docs.omnidim.io/docs/api-reference), and [video
-tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
-
-Start with [`web-voice`](./web-voice). It runs in minutes and needs no account.
-
 ## Integration patterns
 
 <table>
@@ -66,10 +58,7 @@ Start with [`web-voice`](./web-voice). It runs in minutes and needs no account.
   </tr>
 </table>
 
-## How the examples fit together
-
-Every example is small enough to understand in one sitting and structured so
-you can replace the sample data and endpoints with your own systems.
+## How they fit together
 
 ```mermaid
 %%{init: {'theme': 'neutral'}}%%
@@ -83,11 +72,6 @@ flowchart TB
 
 ## Contributing
 
-Read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a change. We welcome
-fixes, documentation improvements, and examples that demonstrate a broadly
-useful integration pattern.
-
-## Security
-
-Do not include API keys, call recordings, customer data, or internal URLs in
-issues or pull requests. See [SECURITY.md](./SECURITY.md) for reporting details.
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Never put API keys, recordings, or
+customer data in an issue or pull request. [SECURITY.md](./SECURITY.md) covers
+reporting a vulnerability.
