@@ -26,6 +26,17 @@ Open [http://localhost:3000](http://localhost:3000), then select **Start a call*
 5. Apply your normal per-user rate limits to `app/api/session/route.ts`.
 6. Restart the development server and start a call.
 
+**Step 4 is not optional.** Until `getAuthenticatedUser` returns a user, live
+mode answers every call attempt with `401` and this message:
+
+```text
+Live sessions require an authenticated application user. Configure src/lib/auth.ts first.
+```
+
+That is the example working as intended, not a broken build. Session creation
+spends your account's calling capacity, so the guard stays until you decide who
+is allowed to start a call.
+
 `OMNIDIM_API_KEY` is read only by `app/api/session/route.ts`. The browser receives only a short-lived, single-conversation WebSocket URL. Do not use a `NEXT_PUBLIC_` prefix for your API key.
 
 Live mode is intentionally blocked until the authentication adapter returns a

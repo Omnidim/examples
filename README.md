@@ -24,6 +24,21 @@ Use the [Web SDK guide](https://docs.omnidim.io/docs/sdks/web), [API
 reference](https://docs.omnidim.io/docs/api-reference), and [video
 tutorials](https://www.youtube.com/@OmniDimensionio) as you adapt an example.
 
+**Where to start.** Every example runs on fixtures before you add credentials,
+but they are not equal in effort. In rough order:
+
+| Start here | Needs | Time to first run |
+| --- | --- | --- |
+| [`web-voice`](./web-voice) | Node.js | Minutes. Simulation mode needs no account |
+| [`webhooks`](./webhooks) | Node.js or Python | Minutes. Send yourself the sample payload |
+| [`outbound-calls`](./outbound-calls) | Node.js or Python, a CSV | Minutes for a dry run |
+| [`mcp`](./mcp) | An AI coding client, an account | One command, then browser sign-in |
+| [`custom-api`](./custom-api) | Node.js or Python, dashboard access | Longest. Each action is configured on the agent |
+
+Prefer no code at all? The [verified n8n
+node](https://n8n.io/integrations/omnidimension-trigger/) covers agents,
+campaigns, call dispatch, and post-call triggers from a workflow editor.
+
 ## Integration patterns
 
 <table>
