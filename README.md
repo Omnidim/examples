@@ -41,6 +41,13 @@
       Deliver summaries and extracted data to a workflow you control.
     </td>
   </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./bulk-campaigns"><strong>Operate a campaign end to end</strong></a><br>
+      Draft it, batch in contacts, rotate numbers, steer it live, read results.
+    </td>
+    <td width="50%" valign="top"></td>
+  </tr>
 </table>
 
 ## Run it your way
@@ -66,6 +73,7 @@ flowchart TB
   Website[Website or product] <--> |web-voice| Agent[OmniDimension agent]
   Agent <--> |custom-api| Backend[Backend or REST API]
   Leads[Lead list or CRM] --> |outbound-calls| Agent
+  Ops[Campaign operator] --> |bulk-campaigns| Agent
   Agent --> |webhooks| Destination[CRM, workflow, or data store]
   Client[AI coding client] <--> |mcp| Agent
 ```
