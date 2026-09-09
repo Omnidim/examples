@@ -12,8 +12,9 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 | --- | --- | --- |
 | TypeScript | `npm ci && npm run dev` | `npm test` |
 | Python | `python server.py` | `python -m unittest discover -s tests` |
+| Go | `go run .` | `go test ./...` |
 
-Both implementations expose the same API on port `8787` by default.
+All implementations expose the same API on port `8787` by default.
 
 ```text
 GET  /healthz
