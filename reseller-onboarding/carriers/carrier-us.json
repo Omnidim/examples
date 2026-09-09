@@ -1,0 +1,33 @@
+{
+  "region": "US",
+  "carrier": "carrier-us",
+  "stocks": "US local numbers, by area code",
+  "instead_of": {},
+  "answers": {
+    "business-info": {
+      "business_name": "Demo Corp",
+      "business_type": "LLC",
+      "business_identity": "direct_customer",
+      "business_industry": "TECHNOLOGY",
+      "ein": "12-3456789",
+      "website_url": "https://demo.example",
+      "regions_of_operation": "USA_AND_CANADA"
+    },
+    "business-address": {
+      "street": "1 Demo Street",
+      "city": "Springfield",
+      "state": "IL",
+      "postal_code": "62701",
+      "country": "US"
+    },
+    "authorized-rep": {
+      "first_name": "Demo",
+      "last_name": "User",
+      "email": "demo@example.com",
+      "phone": "+15551234567",
+      "business_title": "Head of Operations",
+      "job_position": "Director"
+    },
+    "confirm": {}
+  }
+}

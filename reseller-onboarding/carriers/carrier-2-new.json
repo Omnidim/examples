@@ -1,0 +1,27 @@
+{
+  "region": "IN",
+  "carrier": "carrier-2-new",
+  "stocks": "Mobile numbers, 94 and 79 series",
+  "instead_of": {
+    "verify-gst": "skip-gst"
+  },
+  "answers": {
+    "register": {
+      "name": "Demo User",
+      "email": "demo@example.com",
+      "phone": "+919876543210",
+      "state": "Gujarat",
+      "district": "Surat",
+      "pincode": "395003",
+      "account_type": "individual"
+    },
+    "verify-pan": {
+      "pan": "ABCDE1234F",
+      "pan_holder_name": "Demo User"
+    },
+    "verify-aadhaar": {},
+    "aadhaar-status": {},
+    "skip-gst": {},
+    "confirm": {}
+  }
+}
