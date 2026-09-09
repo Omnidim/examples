@@ -46,7 +46,10 @@
       <a href="./bulk-campaigns"><strong>Operate a campaign end to end</strong></a><br>
       Draft it, batch in contacts, rotate numbers, steer it live, read results.
     </td>
-    <td width="50%" valign="top"></td>
+    <td width="50%" valign="top">
+      <a href="./reseller-onboarding"><strong>Onboard a client as a reseller</strong></a><br>
+      Create it, fund it, verify it on a carrier, buy it a number.
+    </td>
   </tr>
 </table>
 
@@ -76,6 +79,8 @@ flowchart TB
   Ops[Campaign operator] --> |bulk-campaigns| Agent
   Agent --> |webhooks| Destination[CRM, workflow, or data store]
   Client[AI coding client] <--> |mcp| Agent
+  Reseller[Reseller product] --> |reseller-onboarding| Tenant[Client account and its number]
+  Tenant --> Agent
 ```
 
 Want a finished agent rather than the wiring? See [example

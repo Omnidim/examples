@@ -1,0 +1,2 @@
+# Live mode only. A dry run and the tests import nothing.
+omnidimension>=0.4.1

@@ -1,0 +1,27 @@
+{
+  "region": "IN",
+  "carrier": "carrier-1",
+  "stocks": "Landline numbers, city codes 11, 12 and 80",
+  "instead_of": {
+    "verify-gst": "skip-gst"
+  },
+  "answers": {
+    "register": {
+      "name": "Demo User",
+      "email": "demo@example.com",
+      "phone": "+919876543210"
+    },
+    "verify-otp": {},
+    "verify-pan": {
+      "pan": "ABCDE1234F",
+      "business_type": "proprietorship"
+    },
+    "aadhaar-otp": {
+      "aadhaar": "999999999999"
+    },
+    "aadhaar-verify": {},
+    "skip-gst": {},
+    "preview": {},
+    "accept": {}
+  }
+}
