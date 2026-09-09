@@ -42,7 +42,8 @@ jobs:
           python-version: "3.12"
       - run: python -m unittest discover
         working-directory: ${{ matrix.directory }}
-    go:
+
+  go:
     name: Go examples
     runs-on: ubuntu-latest
     strategy:
