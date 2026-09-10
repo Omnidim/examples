@@ -21,6 +21,11 @@ class PostCallEventTests(unittest.TestCase):
     def test_rejects_a_payload_without_call_identifiers(self) -> None:
         self.assertIsNone(server.parse_post_call_event({"bot_name": "Agent"}))
 
+    def test_rejects_boolean_call_identifiers(self) -> None:
+        for field in ("call_id", "bot_id"):
+            with self.subTest(field=field):
+                self.assertIsNone(server.parse_post_call_event({**FIXTURE, field: True}))
+
     def test_rejects_non_public_forwarding_targets(self) -> None:
         original = os.environ.get("FORWARD_URL")
         original_allowed_hosts = os.environ.get("FORWARD_URL_ALLOWED_HOSTS")

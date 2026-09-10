@@ -18,7 +18,8 @@ def parse_post_call_event(value: object) -> dict | None:
     """Validate the documented post-call payload fields needed by this example."""
     if not isinstance(value, dict):
         return None
-    if not isinstance(value.get("call_id"), int) or not isinstance(value.get("bot_id"), int):
+    # bool is a subclass of int, so isinstance alone would accept {"call_id": true}.
+    if any(not isinstance(value.get(field), int) or isinstance(value.get(field), bool) for field in ("call_id", "bot_id")):
         return None
     if any(not isinstance(value.get(field), str) for field in REQUIRED_STRING_FIELDS):
         return None

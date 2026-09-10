@@ -65,6 +65,9 @@ class Handler(BaseHTTPRequestHandler):
         except (KeyError, TypeError, ValueError, json.JSONDecodeError):
             self.send_json(HTTPStatus.BAD_REQUEST, {"error": "customerPhone_and_timeSlot_are_required"})
             return
+        if not isinstance(customer_phone, str) or not isinstance(time_slot, str) or not customer_phone or not time_slot:
+            self.send_json(HTTPStatus.BAD_REQUEST, {"error": "customerPhone_and_timeSlot_are_required"})
+            return
         appointment = reserve_appointment(customer_phone, time_slot)
         self.send_json(HTTPStatus.CREATED if appointment else HTTPStatus.CONFLICT, appointment or {"error": "customer_or_slot_not_available"})
 

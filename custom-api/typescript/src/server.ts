@@ -60,7 +60,11 @@ export function handler(request: IncomingMessage, response: ServerResponse): voi
   if (request.method === "POST" && url.pathname === "/v1/appointments") {
     void readJson(request).then((value) => {
       const body = value as Partial<{ customerPhone: string; timeSlot: string }>;
-      if (!body.customerPhone || !body.timeSlot) return send(response, 400, { error: "customerPhone_and_timeSlot_are_required" });
+      // Type-checked, not just truthy: a number here used to reach reserveAppointment and
+      // throw, which the catch below reported as invalid_json on perfectly valid JSON.
+      if (typeof body.customerPhone !== "string" || typeof body.timeSlot !== "string" || !body.customerPhone || !body.timeSlot) {
+        return send(response, 400, { error: "customerPhone_and_timeSlot_are_required" });
+      }
       const appointment = reserveAppointment(body.customerPhone, body.timeSlot);
       return appointment ? send(response, 201, appointment) : send(response, 409, { error: "customer_or_slot_not_available" });
     }).catch(() => send(response, 400, { error: "invalid_json" }));
