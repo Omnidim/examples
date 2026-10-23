@@ -42,6 +42,23 @@ func validPostCallEvent(event map[string]any) bool {
 	return true
 }
 
+func eventSummary(event map[string]any) map[string]any {
+	report, _ := event["call_report"].(map[string]any)
+	// A missing key gives a nil map, which marshals to null: keep the {} that python and TS print.
+	variables, ok := report["extracted_variables"].(map[string]any)
+	if !ok {
+		variables = map[string]any{}
+	}
+	return map[string]any{
+		"callId":             event["call_id"],
+		"agent":              event["bot_name"],
+		"phoneNumber":        event["phone_number"],
+		"callDate":           event["call_date"],
+		"sentiment":          report["sentiment"],
+		"extractedVariables": variables,
+	}
+}
+
 func allowedForwardURL(rawURL string) (*url.URL, error) {
 	target, err := url.Parse(rawURL)
 	if err != nil || target.Scheme != "https" || target.Hostname() == "" {
@@ -107,6 +124,10 @@ func newHandler(forward func(map[string]any) error) http.Handler {
 			writeJSON(writer, http.StatusBadRequest, map[string]any{"error": "invalid_post_call_payload"})
 			return
 		}
+		summary := eventSummary(event)
+		summary["event"] = "post_call_received"
+		line, _ := json.Marshal(summary)
+		fmt.Println(string(line))
 		if err := forward(event); err != nil {
 			log.Printf("post-call forwarding failed: %v", err)
 			writeJSON(writer, http.StatusBadGateway, map[string]any{"error": "post_call_processing_failed"})
