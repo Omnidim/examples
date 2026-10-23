@@ -1,0 +1,32 @@
+name: Dependabot auto-merge
+
+# Patch and minor Dependabot PRs merge themselves once the `CI passed` check is green.
+# Major bumps and every human PR are untouched and still need a human.
+# Needs: "Allow auto-merge" in repo settings, and `CI passed` as a required
+# status check on `main`, or auto-merge would not wait for the tests.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    # github.actor, not the PR author: if a person pushes to a Dependabot branch,
+    # the actor is that person and this job does nothing.
+    if: github.actor == 'dependabot[bot]' && github.repository == 'Omnidim/examples'
+    steps:
+      - id: metadata
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # Exact match on purpose: anything unexpected (a major, an empty value) is not merged.
+      - name: Enable auto-merge
+        if: contains(fromJSON('["version-update:semver-patch","version-update:semver-minor"]'), steps.metadata.outputs.update-type)
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
