@@ -12,8 +12,9 @@ Part of [OmniDimension examples](https://github.com/Omnidim/examples).
 | --- | --- | --- | --- |
 | TypeScript | `npm ci && npm run dev` | `npm run fixture` | `npm test` |
 | Python | `python server.py` | `python send_fixture.py` | `python -m unittest discover -s tests` |
+| Go | `go run .` | `go run ./cmd/send_fixture` | `go test ./...` |
 
-Both receivers listen on `http://localhost:8788/webhooks/omnidimension` by default. A local receiver cannot be reached by OmniDimension. Use a temporary HTTPS tunnel for dashboard testing, then replace it with a deployed endpoint you control.
+All three receivers listen on `http://localhost:8788/webhooks/omnidimension` by default. A local receiver cannot be reached by OmniDimension. Use a temporary HTTPS tunnel for dashboard testing, then replace it with a deployed endpoint you control.
 
 ## Configure post-call delivery
 
