@@ -57,3 +57,12 @@ jobs:
           go-version: "1.27"
       - run: go test ./...
         working-directory: ${{ matrix.directory }}
+  # One stable name for branch protection, so adding a matrix entry never needs a settings change.
+  ci-passed:
+    name: CI passed
+    if: always()
+    needs: [typescript, python, go]
+    runs-on: ubuntu-latest
+    steps:
+      - if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1
