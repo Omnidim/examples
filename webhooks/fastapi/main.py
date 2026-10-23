@@ -6,13 +6,14 @@
 
 from __future__ import annotations
 
+import json
 import os
 from http.client import HTTPSConnection
 from typing import Any
 from urllib.parse import urlparse
 
 from fastapi import FastAPI, HTTPException, status
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StrictInt
 
 
 class CallReport(BaseModel):
@@ -23,8 +24,8 @@ class CallReport(BaseModel):
 
 
 class PostCallEvent(BaseModel):
-    call_id: int
-    bot_id: int
+    call_id: StrictInt
+    bot_id: StrictInt
     bot_name: str
     phone_number: str
     call_date: str
@@ -88,6 +89,7 @@ def healthz() -> dict[str, bool]:
     status_code=status.HTTP_202_ACCEPTED,
 )
 def handle_webhook(event: PostCallEvent) -> dict[str, Any]:
+    print(json.dumps({"event": "post_call_received", **event_summary(event)}))
     try:
         forward(event)
     except (OSError, RuntimeError, ValueError) as error:

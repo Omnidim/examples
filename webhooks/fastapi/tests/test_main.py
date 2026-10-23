@@ -4,16 +4,15 @@
 
 import json
 import os
-from pathlib import Path
 import sys
+from pathlib import Path
 
 # Ensure local module is importable
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
 import pytest
 from fastapi.testclient import TestClient
-
-from main import app, event_summary, forward, PostCallEvent
+from main import PostCallEvent, app, event_summary, forward
 
 FIXTURE_PATH = Path(__file__).parents[2] / "fixtures" / "post-call.json"
 FIXTURE = json.loads(FIXTURE_PATH.read_text())
@@ -45,9 +44,10 @@ def test_rejects_missing_required_fields():
 
 def test_rejects_boolean_call_identifiers():
     for field in ("call_id", "bot_id"):
-        payload = {**FIXTURE, field: "not-an-int"}
-        response = client.post("/webhooks/omnidimension", json=payload)
-        assert response.status_code == 422
+        for invalid_val in ("not-an-int", True, False, 123.45):
+            payload = {**FIXTURE, field: invalid_val}
+            response = client.post("/webhooks/omnidimension", json=payload)
+            assert response.status_code == 422
 
 
 def test_rejects_non_public_forwarding_targets():
