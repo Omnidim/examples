@@ -2,6 +2,12 @@
 
 A small Next.js app that puts an OmniDimension voice agent on a website.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOmnidim%2Fexamples&root-directory=web-voice)
+
+> **Hosted preview is simulation only:** Deploys with no environment variables set, landing directly in simulation mode so anyone can evaluate the interface with zero credentials.
+>
+> Live mode requires setting `NEXT_PUBLIC_OMNIDIM_MODE=live`, configuring `OMNIDIM_API_KEY` and numeric `OMNIDIM_AGENT_ID`, and replacing `getAuthenticatedUser` in `src/lib/auth.ts` with your app's session check. Live calls are blocked by `app/api/session/route.ts` until an authenticated user is returned to prevent unauthorized consumption of calling capacity.
+
 ![The web-voice call console: live status, a voice visualizer, mute and end-call
 controls, and a running two-speaker transcript](./docs/web-voice-call.png)
 
