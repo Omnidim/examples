@@ -79,3 +79,19 @@ func TestAllowedForwardURL(t *testing.T) {
 		})
 	}
 }
+
+func TestEventSummary(t *testing.T) {
+	event := map[string]any{"call_id": 123.0, "bot_name": "Agent", "phone_number": "+15550100", "call_date": "2026-09-09"}
+	got, _ := json.Marshal(eventSummary(event))
+	want := `{"agent":"Agent","callDate":"2026-09-09","callId":123,"extractedVariables":{},"phoneNumber":"+15550100","sentiment":null}`
+	if string(got) != want {
+		t.Fatalf("no report: got %s, want %s", got, want)
+	}
+
+	event["call_report"] = map[string]any{"sentiment": "positive", "extracted_variables": map[string]any{"name": "Ravi"}}
+	got, _ = json.Marshal(eventSummary(event))
+	want = `{"agent":"Agent","callDate":"2026-09-09","callId":123,"extractedVariables":{"name":"Ravi"},"phoneNumber":"+15550100","sentiment":"positive"}`
+	if string(got) != want {
+		t.Fatalf("with report: got %s, want %s", got, want)
+	}
+}
