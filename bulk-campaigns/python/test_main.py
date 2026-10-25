@@ -55,5 +55,10 @@ class CreatePayloadTests(unittest.TestCase):
     def test_a_plain_create_is_a_draft(self) -> None:
         payload = build_create_payload(self._options(), "177")
         self.assertTrue(payload["save_as_draft"])
+        self.assertEqual(payload["phone_number_id"], 177)
         self.assertNotIn("rotation", payload)
         self.assertNotIn("call_conditions", payload)
+
+    def test_phone_number_id_preserved_when_not_integer_string(self) -> None:
+        payload = build_create_payload(self._options(), "YOUR_PHONE_NUMBER_ID")
+        self.assertEqual(payload["phone_number_id"], "YOUR_PHONE_NUMBER_ID")
