@@ -76,10 +76,15 @@ def parse_conditions(pairs: list[str]) -> list[dict[str, str]]:
     return conditions
 
 
-def build_create_payload(options: argparse.Namespace, phone_number_id: str) -> dict[str, object]:
+def build_create_payload(options: argparse.Namespace, phone_number_id: str | int) -> dict[str, object]:
+    try:
+        resolved_phone_id: str | int = int(phone_number_id)
+    except (ValueError, TypeError):
+        resolved_phone_id = phone_number_id
+
     payload: dict[str, object] = {
         "name": options.name,
-        "phone_number_id": phone_number_id,
+        "phone_number_id": resolved_phone_id,
         "save_as_draft": True,
         "concurrent_call_limit": options.concurrency,
     }

@@ -53,6 +53,12 @@ test('conditions parse column and value', () => {
 test('a plain create is a draft', () => {
   const payload = buildCreatePayload(options(), '177');
   assert.equal(payload.save_as_draft, true);
+  assert.equal(payload.phone_number_id, 177);
   assert.ok(!('rotation' in payload));
   assert.ok(!('call_conditions' in payload));
+});
+
+test('phone_number_id preserved when not integer string', () => {
+  const payload = buildCreatePayload(options(), 'YOUR_PHONE_NUMBER_ID');
+  assert.equal(payload.phone_number_id, 'YOUR_PHONE_NUMBER_ID');
 });

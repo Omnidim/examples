@@ -81,10 +81,13 @@ export function parseConditions(pairs: string[]): Record<string, string>[] {
   });
 }
 
-export function buildCreatePayload(options: CreateOptions, phoneNumberId: string): Record<string, unknown> {
+export function buildCreatePayload(options: CreateOptions, phoneNumberId: string | number): Record<string, unknown> {
+  const parsedId = typeof phoneNumberId === 'number' ? phoneNumberId : Number(phoneNumberId);
+  const resolvedPhoneId = Number.isFinite(parsedId) ? parsedId : phoneNumberId;
+
   const payload: Record<string, unknown> = {
     name: options.name,
-    phone_number_id: phoneNumberId,
+    phone_number_id: resolvedPhoneId,
     save_as_draft: true,
     concurrent_call_limit: options.concurrency,
   };
